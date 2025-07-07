@@ -52,7 +52,7 @@ function HeroSection() {
           />
         </div>
       </div>
-      <IoIosArrowDown className='absolute text-4xl top-[90dvh] left-[50dvw]' />
+      <IoIosArrowDown className='absolute text-4xl top-[90dvh] left-[50dvw] animate-bounce' />
     </div>
   )
 }
