@@ -47,6 +47,11 @@ float snoise(vec2 v) {
 void main() {
   vec2 uv = gl_FragCoord.xy / resolution.xy;
   
+  // Fix aspect ratio to prevent warping
+  float aspect = resolution.x / resolution.y;
+  vec2 aspectUv = uv;
+  aspectUv.x *= aspect;
+  
   // Use pixelRatio to normalize scale across different displays
   float scale = pixelRatio; // This will be 2.0 on retina displays, 1.0 on standard displays
   
@@ -54,10 +59,10 @@ void main() {
   vec2 timeOffset = vec2(time * 0.02, time * 0.015);
   vec2 mouseOffset = mouse * 0.25;
   
-  // Apply consistent scaling regardless of device pixel ratio
-  float noise = snoise(uv * 2.0 / scale + timeOffset + mouseOffset);
-  float wave = sin(uv.x * 5.0 / scale + time * 0.3 + mouse.x * 0.01 + noise) * 0.5 + 
-               sin(uv.y * 5.0 / scale + time * 0.25 + mouse.y * 0.01 + noise) * 0.5;
+  // Apply consistent scaling regardless of device pixel ratio and use aspect-corrected UV
+  float noise = snoise(aspectUv * 2.0 / scale + timeOffset + mouseOffset);
+  float wave = sin(aspectUv.x * 5.0 / scale + time * 0.3 + mouse.x * 0.01 + noise) * 0.5 + 
+               sin(aspectUv.y * 5.0 / scale + time * 0.25 + mouse.y * 0.01 + noise) * 0.5;
   
   vec3 baseColor = vec3(0.0 / 255.0, 0.0 / 255.0, 25.0 / 255.0);
   vec3 waveColor = vec3(0.2, 0.2, 0.2);
