@@ -1,0 +1,13 @@
+.fancy-gradient {
+  background-size: 200% 200%; /* gives room for animation */
+  transition: background-position 0.3s ease; /* smooth start */
+}
+
+.fancy-gradient:hover {
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}

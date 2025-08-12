@@ -7,6 +7,7 @@ import MyWorkSection from './components/MyWorkSection'
 import DividerDot from './components/DividerDot'
 import GetInTouchSection from './components/GetInTouchSection'
 import FooterSection from './components/FooterSection'
+import Background from './components/Background'
 
 export const metadata = {
   title: `${process.env.NEXT_PUBLIC_SITE_NAME} | Home`,
@@ -18,10 +19,12 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <MyWorkSection />
-      <DividerDot />
-      <GetInTouchSection />
-      <FooterSection />
+      <div className='px-4'>
+        <MyWorkSection />
+        <DividerDot />
+        <GetInTouchSection />
+        <FooterSection />
+      </div>
     </>
   )
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import LenisWrapper from './components/LenisWrapper'
 import './globals.css'
+import Background from './components/Background'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -25,7 +26,10 @@ export default function RootLayout({
         <link rel='icon' href='/favicon/favicon.ico' />
       </head>
       <LenisWrapper>
-        <body className={`${inter.variable} antialiased`}>{children}</body>
+        <body className={`${inter.variable} antialiased`}>
+          <Background />
+          {children}
+        </body>
       </LenisWrapper>
     </html>
   )
