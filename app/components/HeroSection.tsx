@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react'
-import { IoIosArrowDown } from 'react-icons/io'
+import React, { useState, useEffect, useCallback } from 'react'
 import styles from './HeroSection.module.scss'
 
 function HeroSection() {
@@ -15,7 +14,7 @@ function HeroSection() {
     '/dotonburi.jpeg',
     '/garden.jpeg',
     '/mountain.jpeg',
-    '/speech.jpeg'
+    '/speech.jpeg',
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -24,7 +23,7 @@ function HeroSection() {
   const [canNavigate, setCanNavigate] = useState(true)
 
   // Create interval function - defined once, used multiple times
-  const createInterval = () => {
+  const createInterval = useCallback(() => {
     return setInterval(() => {
       setIsTransitioning(true)
       setTimeout(() => {
@@ -34,7 +33,7 @@ function HeroSection() {
         setIsTransitioning(false)
       }, 300) // Half of transition duration
     }, 4000) // Change image every 4 seconds
-  }
+  }, [images.length])
 
   // Auto-advance slideshow
   useEffect(() => {
@@ -44,7 +43,7 @@ function HeroSection() {
     return () => {
       if (id) clearInterval(id)
     }
-  }, [images.length])
+  }, [createInterval])
 
   // Reset interval function
   const resetInterval = () => {
@@ -124,13 +123,14 @@ function HeroSection() {
           }}
         >
           {/* Main Image with Cross-fade */}
-          <div className="relative w-full h-full">
+          <div className='relative w-full h-full'>
             <Image
               src={images[currentImageIndex]}
               fill
               alt='Charlie Graham'
-              className={`rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 transition-all duration-600 object-cover ${isTransitioning ? 'opacity-0' : 'opacity-100'
-                }`}
+              className={`rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 transition-all duration-600 object-cover ${
+                isTransitioning ? 'opacity-0' : 'opacity-100'
+              }`}
             />
           </div>
 
@@ -140,10 +140,11 @@ function HeroSection() {
               <button
                 key={index}
                 onClick={() => handleImageChange(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentImageIndex
-                  ? 'bg-white shadow-lg'
-                  : 'bg-white/50 hover:bg-white/75'
-                  }`}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex
+                    ? 'bg-white shadow-lg'
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
@@ -151,26 +152,54 @@ function HeroSection() {
 
           {/* Navigation Arrows */}
           <button
-            onClick={() => handleImageChange(
-              currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1
-            )}
+            onClick={() =>
+              handleImageChange(
+                currentImageIndex === 0
+                  ? images.length - 1
+                  : currentImageIndex - 1
+              )
+            }
             className='absolute hover:cursor-pointer left-2 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100'
             aria-label='Previous image'
           >
-            <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
+            <svg
+              className='w-4 h-4'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M15 19l-7-7 7-7'
+              />
             </svg>
           </button>
 
           <button
-            onClick={() => handleImageChange(
-              currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
-            )}
+            onClick={() =>
+              handleImageChange(
+                currentImageIndex === images.length - 1
+                  ? 0
+                  : currentImageIndex + 1
+              )
+            }
             className='absolute hover:cursor-pointer right-2 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100'
             aria-label='Next image'
           >
-            <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
+            <svg
+              className='w-4 h-4'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M9 5l7 7-7 7'
+              />
             </svg>
           </button>
         </div>

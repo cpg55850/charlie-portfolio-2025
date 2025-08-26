@@ -41,6 +41,7 @@ export const Primary: Story = {
   args: {
     title: 'University of Central Missouri',
     subtitle: 'Computer Science Tutor',
+    slug: 'ucm',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundColor: '#d32f2f', // Default red color similar to the example

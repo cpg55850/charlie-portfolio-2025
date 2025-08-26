@@ -1,17 +1,14 @@
 'use client'
-import Image from 'next/image'
 
 interface ProjectHeaderProps {
   title: string
   subtitle: string
-  image: string
-  forText: string
+  forText?: string
 }
 
 export default function ProjectHeader({
   title,
   subtitle,
-  image,
   forText,
 }: ProjectHeaderProps) {
   return (
@@ -22,7 +19,7 @@ export default function ProjectHeader({
           <h1 className='text-5xl md:text-5xl font-bold tracking-wider'>
             {title}
           </h1>
-          <h2 className='text-lg text-gray-400 mb-2'>{forText}</h2>
+          {forText && <h2 className='text-lg text-gray-400 mb-2'>{forText}</h2>}
           <p className='text-lg md:text-xl leading-relaxed w-full'>
             {subtitle}
           </p>
