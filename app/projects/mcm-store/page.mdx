@@ -13,25 +13,29 @@ import Image from 'next/image'
 
 <ProjectHeader
   title="The MCM Store"
-  subtitle="Wuphf is a social media platform. It was designed to be like Twitter, but with a fun 'animal avatar' twist. This project required a heavy back-end infrastructure to support the features you would expect from a modern social media application."
+  subtitle="The MCM Store website was rebuilt from the ground up to move away from WooCommerce and streamline how we create store websites for clients. By switching to Shopify, we eliminated the need for heavy WordPress plugin management while enabling direct integration with our accounting software for real-time inventory syncing."
   image="/wuphf_dog.png"
   forText="Created for Martin City Marketing"
 />
 
 <span className='text-gray-400 text-sm'>Tech Stack: React, Next.js, Tailwind CSS, Node.js, Express, PostgreSQL, Prisma, Vercel</span>
 
-# Purpose and goal
-Wuphf was the final project for my undergraduate degree, and going into it I knew that I would have the whole semester to work on it with a team. For this reason I wanted to tackle something that was both manageable but ambitious with the time given. I felt that a social media application was in-depth enough that we would all learn a lot.
+## Purpose and Goal
+The primary goal was to replace WooCommerce with a faster, more maintainable, and integrated platform. By using Shopify, we could deploy client stores faster, reduce technical overhead, and connect directly with our internal systems. The target audience includes Cable Dahmer employees and locations needing branded products such as uniforms and promotional items.
 
-# Technologies used
-This project uses React and NextJS for the frontend, and for the backend API, we used the built-in NextJS API server with Postgresql as the database and Prisma as the ORM. For authentication, we used Google login (Oauth) via the NextAuth package. It was my understanding that this React framework was becoming widely adopted, and was very popular for its flexibility and ease of use. For this reason I felt it was essential that I become familiar with it, and I’m glad that I did. It would become my go-to framework for web development in future projects!
+## Technologies Used
+The frontend was developed with **Next.js**, starting from Shopify’s official eCommerce template, which I then heavily customized. This included implementing **user authentication** and **profile management**.  
 
-# Technical hurdles (and how they were solved)
-A few factors made this project particularly challenging. One of the main hurdles was the sheer number of libraries we were using, many of which were new to me. Through this project, I gained valuable experience working with Next.js, NextAuth, and Prisma. It significantly expanded my understanding of backend development, especially when it came to structuring and organizing a RESTful API.
+For the backend, I worked with Shopify’s **GraphQL APIs** — specifically the **Storefront API**, **Admin API**, and **Customer API** — integrating them directly into the frontend. Choosing the right API for each task was a key learning point.  
 
-For this project, we had to design schemas for user profiles, posts, likes, replies, and the relationships between them. Mapping out these connections and ensuring that everything functioned smoothly was one of the most challenging aspects of the project.
+The site is hosted on **Vercel** for the frontend, while **Shopify** handles backend operations, order processing, and product data. This setup allowed seamless integration with **NetSuite**, ensuring synchronized inventory between our accounting and eCommerce systems.
 
-# Lessons learned
-Although not strictly a “technical” challenge, working with a team was another key difficulty. This was my first major experience collaborating in a team setting. While some team members contributed more than others, I had the chance to work closely with an ambitious classmate who used TypeScript and Tailwind CSS. Initially, I had reservations about using these technologies due to the complexity of learning them, but as I started to use them, I quickly realized their power and how helpful they were in streamlining development. We did have some disagreements along the way, but in the end, I learned a great deal from him and the overall experience.
+## Technical Hurdles (and How They Were Solved)
+One of the biggest challenges was navigating Shopify’s multiple APIs. Understanding the differences between the Storefront, Admin, and Customer APIs — and knowing when to use each — required in-depth reading of Shopify’s documentation and reverse-engineering the official Next.js eCommerce template.  
+
+Another technical hurdle was managing authentication and user state, including secure cookie handling for storing cart and session information. This deepened my understanding of concepts like **HttpOnly** and **Secure** cookies, and how they help protect sensitive data.
+
+## Lessons Learned
+This project strengthened my skills in integrating third-party APIs, especially GraphQL-based ones. It taught me the value of carefully studying documentation and existing codebases to solve complex implementation challenges. I also came away with a better understanding of modern authentication patterns, secure cookie management, and how to architect a frontend that communicates cleanly with an external eCommerce backend.
 
 </ProjectLayout>

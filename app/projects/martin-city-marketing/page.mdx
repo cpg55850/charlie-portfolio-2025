@@ -13,23 +13,23 @@ import Image from 'next/image'
 
 <ProjectHeader
   title="Martin City Marketing"
-  subtitle="Wuphf is a social media platform. It was designed to be like Twitter, but with a fun 'animal avatar' twist. This project required a heavy back-end infrastructure to support the features you would expect from a modern social media application."
+  subtitle="The Martin City Marketing website was built to better represent the brand’s wide range of services, clearly communicate what we do, and impress potential clients and employees. This was a complete redesign, created with a focus on modern web technologies, strong UI/UX collaboration, and long-term content flexibility."
   image="/wuphf_dog.png"
 />
 
+## Technologies Used
+The frontend was developed using **Next.js**, **TypeScript**, and **Tailwind CSS** for a responsive, modern, and highly performant interface. The backend content management system (CMS) was built with **Strapi**, hosted on **DigitalOcean**. The frontend is deployed on **Vercel** for global performance and scalability.  
 
-# Technologies used
-This project uses React and NextJS for the frontend, and for the backend API, we used the built-in NextJS API server with Postgresql as the database and Prisma as the ORM. For authentication, we used Google login (Oauth) via the NextAuth package. It was my understanding that this React framework was becoming widely adopted, and was very popular for its flexibility and ease of use. For this reason I felt it was essential that I become familiar with it, and I'm glad that I did. It would become my go-to framework for web development in future projects!
+Custom components were created in Strapi so that the SEO team could build and publish pages independently, without developer intervention. The site also features an embedded **Google Maps API** on the contact page, providing an interactive and accurate location display.
 
-# Purpose and goal
-Wuphf was the final project for my undergraduate degree, and going into it I knew that I would have the whole semester to work on it with a team. For this reason I wanted to tackle something that was both manageable but ambitious with the time given. I felt that a social media application was in-depth enough that we would all learn a lot.
+## Purpose and Goal
+The primary goal was to more accurately represent Martin City Marketing’s brand identity and wide-ranging capabilities. We wanted a platform that showcased our portfolio, supported an easily updated blog, and provided a clear, professional point of contact. This project was targeted primarily at potential clients, but also serves as a recruitment tool for prospective employees.
 
-# Technical hurdles (and how they were solved)
-A few factors made this project particularly challenging. One of the main hurdles was the sheer number of libraries we were using, many of which were new to me. Through this project, I gained valuable experience working with Next.js, NextAuth, and Prisma. It significantly expanded my understanding of backend development, especially when it came to structuring and organizing a RESTful API.
+## Technical Hurdles (and How They Were Solved)
+One challenge was setting up Strapi to allow the SEO team to create and customize pages without needing a developer. This involved creating flexible, reusable custom components and ensuring they integrated seamlessly with the Next.js frontend.  
+Another challenge was experimenting with advanced visuals — I built a Three.js prototype with a background custom shader and mouse-reactive animations using GSAP. While the final production site didn’t include every experimental element, the process expanded my skills in **3D rendering** and **complex web animations**, and parts of that work influenced the site’s interactive design choices.
 
-For this project, we had to design schemas for user profiles, posts, likes, replies, and the relationships between them. Mapping out these connections and ensuring that everything functioned smoothly was one of the most challenging aspects of the project.
-
-# Lessons learned
-Although not strictly a "technical" challenge, working with a team was another key difficulty. This was my first major experience collaborating in a team setting. While some team members contributed more than others, I had the chance to work closely with an ambitious classmate who used TypeScript and Tailwind CSS. Initially, I had reservations about using these technologies due to the complexity of learning them, but as I started to use them, I quickly realized their power and how helpful they were in streamlining development. We did have some disagreements along the way, but in the end, I learned a great deal from him and the overall experience.
+## Lessons Learned
+This project reinforced the importance of building with both **maintainability** and **non-technical user control** in mind. I gained valuable experience bridging creative UI/UX designs with performant, production-ready code, while ensuring the CMS empowered other teams to work independently. Experimenting with Three.js and GSAP deepened my understanding of modern, visually engaging web experiences, and gave me tools to wow potential clients in future builds.
 
 </ProjectLayout>

@@ -12,19 +12,17 @@ export default function ProjectHeader({
   title,
   subtitle,
   image,
-  forText
+  forText,
 }: ProjectHeaderProps) {
   return (
     <div className='w-full flex flex-col items-center justify-between max-w-screen-xl mx-auto gap-4'>
       <div>
         {/* Left content */}
         <div className='flex-1'>
-          <h1 className='text-6xl md:text-6xl font-bold tracking-wider'>
+          <h1 className='text-5xl md:text-5xl font-bold tracking-wider'>
             {title}
           </h1>
-          <h2 className='text-lg text-gray-400 mb-2'>
-            {forText}
-          </h2>
+          <h2 className='text-lg text-gray-400 mb-2'>{forText}</h2>
           <p className='text-lg md:text-xl leading-relaxed w-full'>
             {subtitle}
           </p>

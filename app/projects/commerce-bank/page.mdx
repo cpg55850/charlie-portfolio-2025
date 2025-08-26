@@ -1,6 +1,7 @@
 import ProjectHeader from '../../components/ProjectHeader'
 import ProjectLayout from '../../components/ProjectLayout'
 import Image from 'next/image'
+import Link from 'next/link'
 
 <ProjectLayout 
   breadcrumbItems={[
@@ -11,23 +12,24 @@ import Image from 'next/image'
 
 <ProjectHeader
   title="Commerce Bank"
-  subtitle="Wuphf is a social media platform. It was designed to be like Twitter, but with a fun 'animal avatar' twist. This project required a heavy back-end infrastructure to support the features you would expect from a modern social media application."
+  subtitle="The Commerce Bank Cubicle Reservation System was built to address a real-world need that arose during COVID-19: giving employees a way to reserve office cubicles for specific days when working on-site. This ensured proper spacing, avoided overcrowding, and simplified workspace management. I developed the project as part of my Software Engineering course, working with one teammate who contributed to some backend API endpoints. I handled all of the frontend and a significant portion of the backend setup and integration."
   image="/wuphf_dog.png"
 />
 
+<Link href="https://commerce.charlesgraham.co/" className="text-blue-500 hover:underline">Live Site</Link>
 
-# Technologies used
-This project uses React and NextJS for the frontend, and for the backend API, we used the built-in NextJS API server with Postgresql as the database and Prisma as the ORM. For authentication, we used Google login (Oauth) via the NextAuth package. It was my understanding that this React framework was becoming widely adopted, and was very popular for its flexibility and ease of use. For this reason I felt it was essential that I become familiar with it, and I’m glad that I did. It would become my go-to framework for web development in future projects!
+## Purpose and Goal
+The goal was to create a reliable, easy-to-use system for employees to reserve cubicles for specific time slots. This project gave me the opportunity to work on both sides of the stack — learning an entirely new backend framework (Spring Boot) while also ensuring the UI was clean, responsive, and intuitive.
 
-# Purpose and goal
-Wuphf was the final project for my undergraduate degree, and going into it I knew that I would have the whole semester to work on it with a team. For this reason I wanted to tackle something that was both manageable but ambitious with the time given. I felt that a social media application was in-depth enough that we would all learn a lot.
+## Technologies Used
+The backend was built with Spring Boot (Java) and MySQL, deployed to Heroku. For authentication, we implemented JWT-based login and registration. The frontend was developed with React and styled using Material UI to speed up interface creation, deployed to Netlify. Communication between the frontend and backend was handled via a REST API.
 
-# Technical hurdles (and how they were solved)
-A few factors made this project particularly challenging. One of the main hurdles was the sheer number of libraries we were using, many of which were new to me. Through this project, I gained valuable experience working with Next.js, NextAuth, and Prisma. It significantly expanded my understanding of backend development, especially when it came to structuring and organizing a RESTful API.
+## Technical Hurdles (and How They Were Solved)
+One of the steepest learning curves was picking up Spring Boot for the first time. Even with prior Java experience, I had to quickly adapt to its annotations-based structure (e.g., @Controller, @Service, @Repository) and learn best practices for structuring backend code.
+I also ran into CORS errors when connecting the React frontend to the Spring Boot backend. This required digging into HTTP headers and Spring Boot configuration to allow secure cross-origin requests.
+Another significant challenge was implementing a database query to find available cubicles in a specific time range. My initial approach was to fetch large amounts of data and filter it on the frontend, but after consulting my professor, I learned how to write optimized SQL queries directly in MySQL. This not only simplified the logic but also drastically improved performance.
 
-For this project, we had to design schemas for user profiles, posts, likes, replies, and the relationships between them. Mapping out these connections and ensuring that everything functioned smoothly was one of the most challenging aspects of the project.
-
-# Lessons learned
-Although not strictly a “technical” challenge, working with a team was another key difficulty. This was my first major experience collaborating in a team setting. While some team members contributed more than others, I had the chance to work closely with an ambitious classmate who used TypeScript and Tailwind CSS. Initially, I had reservations about using these technologies due to the complexity of learning them, but as I started to use them, I quickly realized their power and how helpful they were in streamlining development. We did have some disagreements along the way, but in the end, I learned a great deal from him and the overall experience.
+## Lessons Learned
+This project taught me how to bridge the gap between frontend and backend development, and how to think more efficiently about database queries. It reinforced the value of asking for help when stuck — sometimes a 10-minute conversation can save hours of frustration. From a process standpoint, I gained firsthand experience with Scrum and sprints, which helped structure the work and keep the project on track. Most importantly, I left with confidence in integrating unfamiliar technologies and solving full-stack communication issues.
 
 </ProjectLayout>
