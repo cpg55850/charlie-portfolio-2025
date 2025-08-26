@@ -12,7 +12,7 @@ const FooterSection = () => {
           className='w-24 h-24 mx-auto mb-4'
         />
         <div>
-          <h2 className='text-sm mb-2'>explore</h2>
+          {/* <h2 className='text-sm mb-2'>explore</h2> */}
           <ul>
             <li className='text-xl'>work</li>
             <li className='text-xl'>projects</li>

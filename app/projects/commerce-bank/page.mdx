@@ -1,6 +1,13 @@
 import ProjectHeader from '../../components/ProjectHeader'
+import ProjectLayout from '../../components/ProjectLayout'
+import Image from 'next/image'
 
-<div className="max-w-screen-lg mx-auto px-8 py-8">
+<ProjectLayout 
+  breadcrumbItems={[
+    { label: 'Projects', href: '/#projects' },
+    { label: 'Commerce Bank' }
+  ]}
+>
 
 <ProjectHeader
   title="Commerce Bank"
@@ -23,4 +30,4 @@ For this project, we had to design schemas for user profiles, posts, likes, repl
 # Lessons learned
 Although not strictly a “technical” challenge, working with a team was another key difficulty. This was my first major experience collaborating in a team setting. While some team members contributed more than others, I had the chance to work closely with an ambitious classmate who used TypeScript and Tailwind CSS. Initially, I had reservations about using these technologies due to the complexity of learning them, but as I started to use them, I quickly realized their power and how helpful they were in streamlining development. We did have some disagreements along the way, but in the end, I learned a great deal from him and the overall experience.
 
-</div>
+</ProjectLayout>

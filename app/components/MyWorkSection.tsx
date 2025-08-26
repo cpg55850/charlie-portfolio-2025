@@ -5,18 +5,26 @@ import Image from 'next/image'
 import { works } from './_works'
 import { projects } from './_projects'
 
-const ProjectCard = ({ title, image }: Project) => {
+const ProjectCard = ({ key, project }: { key: number; project: Project }) => {
   return (
     <Link
-      className='w-full h-[250px] rounded-lg shadow-md flex items-center justify-center min-w-[300px] relative bg-white'
-      href={`/projects/${title}`}
+      className='w-full flex h-[250px] rounded-lg shadow-md flex min-w-[600px] relative bg-white/20 items-center p-4'
+      href={`/projects/${project.slug}`}
     >
-      <Image
-        src={image}
-        alt={title}
-        fill
-        className='rounded-lg object-contain'
-      />
+
+      <div className='relative flex-shrink-0'>
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={200}
+          height={100}
+          className='rounded-xl object-contain bg-red-300'
+        />
+      </div>
+      <div className='flex-shrink p-4 text-white'>
+        <h1>{project.title}</h1>
+        <p>{project.description}</p>
+      </div>
     </Link>
   )
 }
@@ -41,14 +49,13 @@ const MyWorkSection = () => {
           ))}
         </div>
       </div>
-      <div className='flex flex-col items-center justify-center gap-16'>
+      <div className='flex flex-col items-center justify-center gap-16' id="projects">
         <h2 className='font-bold text-4xl'>My Projects</h2>
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-screen-lg'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-screen-xl'>
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
-              title={project.title}
-              image={project.image}
+              project={project}
             />
           ))}
         </div>
