@@ -19,18 +19,47 @@ function HeroSection() {
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [imagesLoaded, setImagesLoaded] = useState(false)
 
-  // Auto-advance slideshow every 4 seconds
+  // Preload all images on component mount
   useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = images.map((src) => {
+        return new Promise<void>((resolve, reject) => {
+          const img = new window.Image()
+          img.onload = () => resolve()
+          img.onerror = () => reject()
+          img.src = src
+        })
+      })
+
+      try {
+        await Promise.all(imagePromises)
+        setImagesLoaded(true)
+      } catch (error) {
+        console.error('Error preloading images:', error)
+        // Still show slideshow even if some images fail to load
+        setImagesLoaded(true)
+      }
+    }
+
+    preloadImages()
+  }, [])
+
+  // Auto-advance slideshow every 4 seconds (only after images are loaded)
+  useEffect(() => {
+    if (!imagesLoaded) return
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
     }, 4000)
 
     return () => clearInterval(interval)
-  }, [currentImageIndex, images.length]) // Reset timer when currentImageIndex changes
+  }, [currentImageIndex, images.length, imagesLoaded]) // Reset timer when currentImageIndex changes
 
-  // Handle clicking on image to go to next
+  // Handle clicking on image to go to next (only if images are loaded)
   const goToNextImage = () => {
+    if (!imagesLoaded) return
     setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
   }
 
@@ -79,25 +108,31 @@ function HeroSection() {
           }}
           onClick={goToNextImage}
         >
-          <AnimatePresence>
-            <motion.div
-              key={images[currentImageIndex]}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={images[currentImageIndex]}
-                fill
-                alt='Charlie Graham'
-                className="rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover"
-                priority={currentImageIndex === 0}
-                sizes="(max-width: 768px) 100vw, 30vw"
-              />
-            </motion.div>
-          </AnimatePresence>
+          {!imagesLoaded ? (
+            <div className="w-full h-full bg-transparent animate-pulse rounded-xl flex items-center justify-center">
+              <span className="text-gray-500 text-sm"></span>
+            </div>
+          ) : (
+            <AnimatePresence>
+              <motion.div
+                key={images[currentImageIndex]}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={images[currentImageIndex]}
+                  fill
+                  alt='Charlie Graham'
+                  className="rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover"
+                  priority={currentImageIndex === 0}
+                  sizes="(max-width: 768px) 100vw, 30vw"
+                />
+              </motion.div>
+            </AnimatePresence>
+          )}
         </div>
       </div>
       {/* <IoIosArrowDown className='absolute text-4xl top-[90dvh] left-[50dvw] animate-bounce' /> */}
