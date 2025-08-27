@@ -11,7 +11,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
       className='w-full flex h-[250px] rounded-lg shadow-md flex min-w-[600px] relative bg-white/20 items-center p-4'
       href={`/projects/${project.slug}`}
     >
-
       <div className='relative flex-shrink-0'>
         <Image
           src={project.image}
@@ -49,14 +48,14 @@ const MyWorkSection = () => {
           ))}
         </div>
       </div>
-      <div className='flex flex-col items-center justify-center gap-16' id="projects">
+      <div
+        className='flex flex-col items-center justify-center gap-16'
+        id='projects'
+      >
         <h2 className='font-bold text-4xl'>My Projects</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-screen-xl'>
           {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              project={project}
-            />
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
       </div>

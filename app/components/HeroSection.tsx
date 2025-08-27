@@ -15,7 +15,7 @@ function HeroSection() {
     '/dotonburi.jpeg',
     '/garden.jpeg',
     '/mountain.jpeg',
-    '/speech.jpeg'
+    '/speech.jpeg',
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)

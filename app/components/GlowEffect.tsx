@@ -12,7 +12,7 @@ const glowIntensities = {
   sm: '0 0 12px 4px',
   md: '0 0 20px 6px',
   lg: '0 0 24px 8px',
-  xl: '0 0 32px 12px'
+  xl: '0 0 32px 12px',
 }
 
 export default function GlowEffect({
@@ -20,16 +20,18 @@ export default function GlowEffect({
   glowColor = '#ffffff',
   className = '',
   hoverGlowIntensity = 'lg',
-  onClick
+  onClick,
 }: GlowEffectProps) {
   return (
     <>
       <div
         className={`glow-element cursor-pointer transition-shadow duration-300 ${className}`}
-        style={{
-          '--glow-color': glowColor,
-          '--glow-intensity': glowIntensities[hoverGlowIntensity]
-        } as React.CSSProperties}
+        style={
+          {
+            '--glow-color': glowColor,
+            '--glow-intensity': glowIntensities[hoverGlowIntensity],
+          } as React.CSSProperties
+        }
         onClick={onClick}
       >
         {children}
