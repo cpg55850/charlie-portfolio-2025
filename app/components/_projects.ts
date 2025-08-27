@@ -23,4 +23,16 @@ export const projects: Project[] = [
     slug: 'commerce-bank',
     image: '/commerce_bank.jpg',
   },
+  {
+    title: 'Pizza You',
+    description: 'A local pizza restaurant with a unique twist',
+    slug: 'pizza-you',
+    image: '/pizza_you_logo.png',
+  },
+  {
+    title: 'Charles\' Bakery',
+    description: 'A local bakery offering a variety of baked goods',
+    slug: 'charles-bakery',
+    image: '/bakery_logo.png',
+  },
 ]
