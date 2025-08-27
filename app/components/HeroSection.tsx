@@ -86,6 +86,7 @@ function HeroSection() {
               alt='Charlie Graham'
               className={`transition-opacity duration-700 ease-in-out rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover absolute inset-0 ${index === currentImageIndex ? "opacity-100" : "opacity-0"
                 }`}
+              style={{ imageOrientation: 'from-image' }}
               priority={index === 0}
               sizes="(max-width: 768px) 100vw, 30vw"
             />
