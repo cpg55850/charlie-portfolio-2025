@@ -37,8 +37,10 @@ export default function GlowEffect({
                 {children}
             </div>
             <style jsx>{`
-        .glow-element:hover {
-          box-shadow: var(--glow-intensity) var(--glow-color);
+        @media (hover: hover) {
+          .glow-element:hover {
+            box-shadow: var(--glow-intensity) var(--glow-color);
+          }
         }
       `}</style>
         </>

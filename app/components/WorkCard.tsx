@@ -34,7 +34,7 @@ export default function WorkCard({
       <Link href={slug}>
         <div
           className={
-            'flex overflow-hidden rounded-3xl shadow-lg glow-on-hover cursor-pointer max-w-full'
+            'flex overflow-hidden rounded-3xl shadow-lg glow-on-hover cursor-pointer'
           }
           style={
             {
@@ -46,25 +46,27 @@ export default function WorkCard({
         >
           {/* Left section with logo, title, subtitle, and content */}
           <div
-            className='flex flex-col p-6 text-white w-full md:w-3/5 '
+            className='flex flex-col p-6 text-white w-full '
             style={{
               backgroundColor: 'var(--bg-color)',
             }}
           >
-            {/* Logo */}
-            <div className='relative mb-6 w-24 h-24 rounded-2xl overflow-hidden bg-white/10 p-2 shadow-md'>
-              <Image
-                src={logo ?? '/UCMLogo.jpg'}
-                alt='University logo'
-                fill
-                className='w-full h-full object-contain rounded-2xl'
-              />
-            </div>
+            <div className='flex flex-row gap-4'>
+              {/* Logo */}
+              <div className='relative mb-6 w-24 h-24 rounded-2xl overflow-hidden bg-white/10 p-2 shadow-md'>
+                <Image
+                  src={logo ?? '/UCMLogo.jpg'}
+                  alt='University logo'
+                  fill
+                  className='w-full h-full object-contain rounded-2xl'
+                />
+              </div>
 
-            {/* Title and subtitle */}
-            <div className='space-y-1 mb-4'>
-              <h2 className='text-xl md:text-3xl font-bold leading-tight'>{title}</h2>
-              <h3 className='text-xl font-light'>{subtitle}</h3>
+              {/* Title and subtitle */}
+              <div className='space-y-1 mb-4'>
+                <h2 className='text-xl md:text-3xl font-bold leading-tight'>{title}</h2>
+                <h3 className='text-xl font-light'>{subtitle}</h3>
+              </div>
             </div>
 
             {/* Content */}
@@ -72,7 +74,7 @@ export default function WorkCard({
           </div>
 
           {/* Right section with image */}
-          <div className='hidden md:block md:w-2/5'>
+          <div className='hidden md:block md:w-[500px]'>
             <div className='h-full w-full relative'>
               <Image
                 src={image ?? '/UCMLibrary.jpg'}

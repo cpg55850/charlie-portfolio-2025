@@ -1,6 +1,5 @@
 import HeroSection from './components/HeroSection'
 import MyWorkSection from './components/MyWorkSection'
-import DividerDot from './components/DividerDot'
 import GetInTouchSection from './components/GetInTouchSection'
 import FooterSection from './components/FooterSection'
 
@@ -16,7 +15,7 @@ export default function Home() {
       <HeroSection />
       <div className='px-4'>
         <MyWorkSection />
-        <DividerDot />
+        {/* <DividerDot /> */}
         <GetInTouchSection />
         <FooterSection />
       </div>
