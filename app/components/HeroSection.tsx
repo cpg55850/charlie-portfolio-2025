@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
-import { IoIosArrowDown } from 'react-icons/io'
+import { motion, AnimatePresence } from 'framer-motion'
 import styles from './HeroSection.module.scss'
 
 function HeroSection() {
@@ -19,64 +19,19 @@ function HeroSection() {
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
-  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null)
-  const [canNavigate, setCanNavigate] = useState(true)
 
-  // Create interval function - defined once, used multiple times
-  const createInterval = () => {
-    return setInterval(() => {
-      setIsTransitioning(true)
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) =>
-          prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        )
-        setIsTransitioning(false)
-      }, 300) // Half of transition duration
-    }, 4000) // Change image every 4 seconds
-  }
-
-  // Auto-advance slideshow
+  // Auto-advance slideshow every 4 seconds
   useEffect(() => {
-    const id = createInterval()
-    setIntervalId(id)
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+    }, 4000)
 
-    return () => {
-      if (id) clearInterval(id)
-    }
-  }, [images.length])
+    return () => clearInterval(interval)
+  }, [currentImageIndex, images.length]) // Reset timer when currentImageIndex changes
 
-  // Reset interval function
-  const resetInterval = () => {
-    if (intervalId) {
-      clearInterval(intervalId)
-    }
-    const newId = createInterval()
-    setIntervalId(newId)
-  }
-
-  // Handle manual navigation with transition and debounce
-  const handleImageChange = (newIndex: number) => {
-    if (isTransitioning || !canNavigate) return
-
-    if (newIndex !== currentImageIndex) {
-      // Disable navigation temporarily
-      setCanNavigate(false)
-
-      setIsTransitioning(true)
-      setTimeout(() => {
-        setCurrentImageIndex(newIndex)
-        setIsTransitioning(false)
-      }, 300)
-
-      // Reset the interval when manually navigating
-      resetInterval()
-
-      // Re-enable navigation after debounce period
-      setTimeout(() => {
-        setCanNavigate(true)
-      }, 500) // 500ms debounce
-    }
+  // Handle clicking on image to go to next
+  const goToNextImage = () => {
+    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
   }
 
   return (
@@ -116,63 +71,33 @@ function HeroSection() {
             Native.
           </p>
         </div>
-        {/* Image Slideshow */}
+        {/* Image Slideshow with Framer Motion */}
         <div
-          className='relative aspect-[3/4] overflow-hidden group'
+          className='relative aspect-[3/4] overflow-hidden cursor-pointer'
           style={{
             width: 'clamp(4em, 13em, 30em)', // Use em for scaling with the parent
           }}
+          onClick={goToNextImage}
         >
-          {/* Main Image with Cross-fade */}
-          <div className="relative w-full h-full">
-            <Image
-              src={images[currentImageIndex]}
-              fill
-              alt='Charlie Graham'
-              className={`rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 transition-all duration-600 object-cover ${isTransitioning ? 'opacity-0' : 'opacity-100'
-                }`}
-            />
-          </div>
-
-          {/* Slideshow Indicators */}
-          <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10'>
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleImageChange(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentImageIndex
-                  ? 'bg-white shadow-lg'
-                  : 'bg-white/50 hover:bg-white/75'
-                  }`}
-                aria-label={`Go to slide ${index + 1}`}
+          <AnimatePresence>
+            <motion.div
+              key={images[currentImageIndex]}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={images[currentImageIndex]}
+                fill
+                alt='Charlie Graham'
+                className="rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover"
+                priority={currentImageIndex === 0}
+                sizes="(max-width: 768px) 100vw, 30vw"
               />
-            ))}
-          </div>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={() => handleImageChange(
-              currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1
-            )}
-            className='absolute hover:cursor-pointer left-2 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100'
-            aria-label='Previous image'
-          >
-            <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
-            </svg>
-          </button>
-
-          <button
-            onClick={() => handleImageChange(
-              currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
-            )}
-            className='absolute hover:cursor-pointer right-2 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100'
-            aria-label='Next image'
-          >
-            <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
-            </svg>
-          </button>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
       {/* <IoIosArrowDown className='absolute text-4xl top-[90dvh] left-[50dvw] animate-bounce' /> */}

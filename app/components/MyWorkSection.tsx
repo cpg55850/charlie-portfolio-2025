@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { works } from './_works'
 import { projects } from './_projects'
 
-const ProjectCard = ({ key, project }: { key: number; project: Project }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <Link
       className='w-full flex h-[250px] rounded-lg shadow-md flex min-w-[600px] relative bg-white/20 items-center p-4'

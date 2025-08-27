@@ -27,9 +27,9 @@ export default function GlowEffect({
             <div
                 className={`glow-element cursor-pointer transition-shadow duration-300 ${className}`}
                 style={{
-                    ['--glow-color' as any]: glowColor,
-                    ['--glow-intensity' as any]: glowIntensities[hoverGlowIntensity]
-                }}
+                    '--glow-color': glowColor,
+                    '--glow-intensity': glowIntensities[hoverGlowIntensity]
+                } as React.CSSProperties}
                 onClick={onClick}
             >
                 {children}

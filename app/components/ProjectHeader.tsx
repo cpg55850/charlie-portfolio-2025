@@ -1,17 +1,14 @@
 'use client'
-import Image from 'next/image'
 
 interface ProjectHeaderProps {
   title: string
   subtitle: string
-  image: string
   forText: string
 }
 
 export default function ProjectHeader({
   title,
   subtitle,
-  image,
   forText,
 }: ProjectHeaderProps) {
   return (

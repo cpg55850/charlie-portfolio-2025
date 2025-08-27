@@ -44,5 +44,6 @@ export const Primary: Story = {
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundColor: '#d32f2f', // Default red color similar to the example
+    slug: 'ucm', // Add required slug property
   },
 }

@@ -37,10 +37,10 @@ export default function WorkCard({
             'flex overflow-hidden rounded-3xl shadow-lg glow-on-hover cursor-pointer'
           }
           style={{
-            ['--glow-color' as any]: backgroundColor,
-            ['--bg-color' as any]: hexToRgba(backgroundColor, 0.3),
-            ['--bg-color-hover' as any]: hexToRgba(backgroundColor, 0.7),
-          }}
+            '--glow-color': backgroundColor,
+            '--bg-color': hexToRgba(backgroundColor, 0.3),
+            '--bg-color-hover': hexToRgba(backgroundColor, 0.7),
+          } as React.CSSProperties}
         >
           {/* Left section with logo, title, subtitle, and content */}
           <div

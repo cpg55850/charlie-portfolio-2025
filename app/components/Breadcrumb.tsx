@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { ChevronRightIcon, HomeIcon } from '@heroicons/react/24/outline'
-import { useScroll } from './LenisWrapper'
 
 interface BreadcrumbItem {
     label: string
