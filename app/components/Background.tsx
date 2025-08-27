@@ -56,7 +56,7 @@ export default function Background() {
   }, [])
 
   return (
-    <div className='fixed h-svh w-full -z-10'>
+    <div className='fixed inset-0 h-screen w-full -z-10' style={{ height: '100vh', minHeight: '100vh' }}>
       <Canvas>
         <WavePlane mouse={mouse} />
       </Canvas>

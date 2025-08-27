@@ -39,14 +39,14 @@ function HeroSection() {
         className='flex flex-col-reverse md:flex-row items-center'
         style={{
           fontSize: 'clamp(2rem, 2vw, 2vw)', // Control the overall scaling here
-          gap: 'clamp(1.5em, 3vw, 6vw)', // Gap scales with font size
+          gap: 'clamp(0.75em, 3vw, 6vw)', // Smaller gap on mobile, scales with font size
         }}
       >
         <div className='flex-1'>
           {/* Name and Title */}
           <div className='flex flex-col items-center md:items-start mb-4'>
             <p className='text-[1.5em] md:text-[2.5em] uppercase font-bold text-center md:text-left leading-none'>
-              <span className='tracking-[0.04em] block'>Charlie</span>
+              <span className='tracking-[0.04em] block text-white'>Charlie</span>
               <span
                 className={`${styles.fancyGradient} block bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent hover:from-purple-400 hover:via-pink-300 hover:to-red-300 transition-colors duration-300 cursor-pointer`}
               >
@@ -72,10 +72,7 @@ function HeroSection() {
         </div>
         {/* Image Slideshow with CSS Transitions */}
         <div
-          className='relative aspect-[3/4] overflow-hidden cursor-pointer'
-          style={{
-            width: 'clamp(4em, 13em, 30em)', // Use em for scaling with the parent
-          }}
+          className={`relative aspect-[3/4] overflow-hidden cursor-pointer ${styles['slideshow-container']}`}
           onClick={goToNextImage}
         >
           {images.map((src, index) => (

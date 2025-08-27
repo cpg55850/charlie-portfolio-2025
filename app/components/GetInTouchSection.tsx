@@ -3,7 +3,7 @@ import React from 'react'
 
 const GetInTouchSection = () => {
   return (
-    <div className='w-full flex flex-col max-w-screen-lg mx-auto py-16 gap-32'>
+    <div className='w-full flex flex-col max-w-screen-lg mx-auto py-16 gap-32 text-white'>
       <div className='flex flex-col gap-4 items-start'>
         <h2 className='font-bold text-4xl'>Get in touch</h2>
         <p className='max-w-[60%] text-xl leading-relaxed'>

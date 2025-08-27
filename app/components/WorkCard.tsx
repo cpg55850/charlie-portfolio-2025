@@ -34,7 +34,7 @@ export default function WorkCard({
       <Link href={slug}>
         <div
           className={
-            'flex overflow-hidden rounded-3xl shadow-lg glow-on-hover cursor-pointer'
+            'flex overflow-hidden rounded-3xl shadow-lg glow-on-hover cursor-pointer max-w-full'
           }
           style={
             {
@@ -63,7 +63,7 @@ export default function WorkCard({
 
             {/* Title and subtitle */}
             <div className='space-y-1 mb-4'>
-              <h2 className='text-3xl font-bold leading-tight'>{title}</h2>
+              <h2 className='text-xl md:text-3xl font-bold leading-tight'>{title}</h2>
               <h3 className='text-xl font-light'>{subtitle}</h3>
             </div>
 
@@ -88,14 +88,29 @@ export default function WorkCard({
         .glow-on-hover {
           transition: box-shadow 0.3s ease;
         }
-        .glow-on-hover:hover {
-          box-shadow: 0 0 24px 2px var(--glow-color, #fff);
+        
+        /* Desktop hover effects */
+        @media (hover: hover) and (pointer: fine) {
+          .glow-on-hover:hover {
+            box-shadow: 0 0 24px 2px var(--glow-color, #fff);
+          }
+          .glow-on-hover:hover > div:first-child {
+            background-color: var(--bg-color-hover) !important;
+          }
         }
+        
+        /* Mobile touch effects */
+        @media (hover: none) and (pointer: coarse) {
+          .glow-on-hover:active {
+            box-shadow: 0 0 24px 2px var(--glow-color, #fff);
+          }
+          .glow-on-hover:active > div:first-child {
+            background-color: var(--bg-color-hover) !important;
+          }
+        }
+        
         .glow-on-hover > div:first-child {
           transition: background-color 0.3s ease;
-        }
-        .glow-on-hover:hover > div:first-child {
-          background-color: var(--bg-color-hover) !important;
         }
       `}</style>
     </>

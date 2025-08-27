@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const FooterSection = () => {
   return (
-    <div className='py-32 flex flex-col items-center justify-center'>
+    <div className='py-32 flex flex-col items-center justify-center text-white'>
       <div className='flex flex-row gap-16 items-center'>
         <Image
           src={CGLogo}

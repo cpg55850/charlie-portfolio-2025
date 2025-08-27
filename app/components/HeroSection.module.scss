@@ -1,6 +1,8 @@
 .fancy-gradient {
-  background-size: 200% 200%; /* gives room for animation */
-  transition: background-position 0.3s ease; /* smooth start */
+  background-size: 200% 200%;
+  /* gives room for animation */
+  transition: background-position 0.3s ease;
+  /* smooth start */
 }
 
 .fancy-gradient:hover {
@@ -8,6 +10,23 @@
 }
 
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.slideshow-container {
+  width: clamp(8em, 9em, 12em);
+  /* Smaller on mobile */
+}
+
+@media (min-width: 768px) {
+  .slideshow-container {
+    width: clamp(4em, 13em, 30em);
+    /* Larger scaling on desktop */
+  }
 }
