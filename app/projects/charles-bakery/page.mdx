@@ -1,6 +1,7 @@
 import ProjectHeader from '../../components/ProjectHeader'
 import ProjectLayout from '../../components/ProjectLayout'
 import Link from 'next/link'
+import Image from 'next/image'
 
 <ProjectLayout 
   breadcrumbItems={[
@@ -9,14 +10,15 @@ import Link from 'next/link'
   ]}
 >
 
+<Image src="/charles_bakery_headerimage.png" alt="Charles' Bakery Header" width={1920} height={1080} className="mx-auto mb-8 rounded-lg shadow-lg" />
+
+<Link href="https://upbeat-mahavira-066207.netlify.app/" className="text-blue-500 hover:underline">View Live Site</Link>
+
 <ProjectHeader
   title="Charles' Bakery"
   subtitle="Charles' Bakery is a delightful online bakery that offers a wide range of freshly baked goods, from artisanal bread to decadent pastries. Our mission is to bring the joy of homemade baked treats to your doorstep."
   image="/charles_bakery.png"
 />
-
-<Link href="https://wuphfpack.vercel.app/" className="text-blue-500 hover:underline">Live Site</Link>
-
 
 # Technologies used
 This project uses React and NextJS for the frontend, and for the backend API, we used the built-in NextJS API server with Postgresql as the database and Prisma as the ORM. For authentication, we used Google login (Oauth) via the NextAuth package. It was my understanding that this React framework was becoming widely adopted, and was very popular for its flexibility and ease of use. For this reason I felt it was essential that I become familiar with it, and I’m glad that I did. It would become my go-to framework for web development in future projects!

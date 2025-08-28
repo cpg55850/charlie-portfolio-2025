@@ -11,7 +11,7 @@ export const works: Work[] = [
     slug: 'martin-city-marketing',
   },
   {
-    title: 'Sumitomo Mitsui Banking Corporation (SMBC)',
+    title: 'SMBC Nikkou Securities Inc.',
     subtitle: 'Intern',
     content:
       'Gained hands-on experience in Japanese business culture and language during a summer internship in Osaka, enhancing my professional communication skills.',
