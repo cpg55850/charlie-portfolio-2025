@@ -16,7 +16,7 @@ export default function ProjectHeader({
       <div>
         {/* Left content */}
         <div className='flex-1'>
-          <h1 className='text-5xl md:text-5xl font-bold tracking-wider'>
+          <h1 className='text-5xl md:text-5xl font-bold tracking-wider mb-4 leading-tight'>
             {title}
           </h1>
           {forText && <h2 className='text-lg text-gray-400 mb-2'>{forText}</h2>}

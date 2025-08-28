@@ -46,6 +46,7 @@ const MyProjectsSection = () => {
                             duration: 0.6,
                             ease: "easeOut"
                         }}
+                        className='h-full'
                     >
                         <ProjectCard project={project} />
                     </motion.div>
