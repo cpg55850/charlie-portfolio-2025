@@ -17,7 +17,6 @@ export default function Home() {
       <div className='w-full flex flex-col md:gap-8 items-center justify-center px-4'>
         <MyWorkSection />
         <MyProjectsSection />
-        {/* <DividerDot /> */}
         <GetInTouchSection />
         <FooterSection />
       </div>

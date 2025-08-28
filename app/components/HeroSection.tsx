@@ -1,11 +1,13 @@
 'use client'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import styles from './HeroSection.module.scss'
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { IoIosDocument } from "react-icons/io";
 import GlowEffect from './GlowCard';
+import AnimatedText from './AnimatedText';
 
 function HeroSection() {
   // Slideshow images
@@ -48,14 +50,36 @@ function HeroSection() {
     }
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.8
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   return (
-    <div className='flex flex-col justify-center items-center md:h-[100dvh] p-4'>
-      <div
+    <motion.div
+      className='flex flex-col justify-center items-center md:h-[100dvh] p-4'
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <motion.div
         className='flex flex-col-reverse md:flex-row items-center'
         style={{
           fontSize: 'clamp(2rem, 2vw, 2vw)', // Control the overall scaling here
           gap: 'clamp(0.75em, 3vw, 6vw)', // Smaller gap on mobile, scales with font size
         }}
+        variants={itemVariants}
       >
         <div className='flex gap-4 flex-col-reverse md:flex-col'>
           <div className='flex flex-row gap-4 justify-end md:justify-start'>
@@ -91,13 +115,17 @@ function HeroSection() {
             {/* Name and Title */}
             <div className='flex flex-col items-center md:items-start mb-4'>
               <p className='text-[1.5em] md:text-[2.5em] uppercase font-bold text-center md:text-left leading-none'>
-                <span className='tracking-[0.04em] block text-white'>Charlie</span>
-                <span
+                <AnimatedText
+                  text="Charlie"
+                  className='tracking-[0.04em] block text-white'
+                  delay={0}
+                />
+                <AnimatedText
+                  text="Graham"
                   className={`${styles.fancyGradient} block bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent hover:from-purple-400 hover:via-pink-300 hover:to-red-300 transition-colors duration-300 cursor-pointer`}
                   onClick={scrollToMyWork}
-                >
-                  Graham
-                </span>
+                  delay={0.3}
+                />
               </p>
               {/* <p className='text-[.5em] md:text-[.75em] font-light mb-4 flex items-center'>
               Software Engineer
@@ -139,9 +167,9 @@ function HeroSection() {
             ))}
           </div>
         </GlowEffect>
-      </div>
+      </motion.div>
       {/* <IoIosArrowDown className='absolute text-4xl top-[90dvh] left-[50dvw] animate-bounce' /> */}
-    </div>
+    </motion.div>
   )
 }
 
