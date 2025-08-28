@@ -1,4 +1,12 @@
 import ProjectHeader from '../../components/ProjectHeader'
+import ProjectLayout from '../../components/ProjectLayout'
+
+<ProjectLayout 
+  breadcrumbItems={[
+    { label: 'My Work', href: '/#work' },
+    { label: 'Martin City Marketing' }
+  ]}
+>
 
 <ProjectHeader
   title="Martin City Marketing"
@@ -6,14 +14,12 @@ import ProjectHeader from '../../components/ProjectHeader'
   image="/wuphf_dog.png"
 />
 
-<div className="max-w-screen-lg mx-auto px-8 py-8">
-
 # Projects & Achievements
 During my time at MCM, I contributed to several impactful projects:
 	•	Wanna Sell Your Car – A custom web application integrated with external APIs and optimized for lead capture.
-	•	Martin City Marketing Website – Redesigned and developed the company’s main site to be fast, modern, and SEO-friendly.
+	•	Martin City Marketing Website – Redesigned and developed the company's main site to be fast, modern, and SEO-friendly.
 	•	The MCM Store – An e-commerce platform for branded merchandise, including Stripe payment integration and admin-friendly dashboards.
-	•	Internal Software Optimization – Improved a GraphQL backend server’s response time by 200% by switching from sequential to parallel processing of requests. Added a Redis caching layer to reduce API load and increase performance, substantially improving usability for the team.
+	•	Internal Software Optimization – Improved a GraphQL backend server's response time by 200% by switching from sequential to parallel processing of requests. Added a Redis caching layer to reduce API load and increase performance, substantially improving usability for the team.
 
 These projects not only improved client satisfaction but also resulted in more efficient internal workflows and faster, more reliable applications.
 
@@ -34,4 +40,4 @@ I would describe my work style as proactive, detail-oriented, and collaborative.
 # Lessons Learned & Growth
 This being my first professional role, Martin City Marketing taught me the nuances of working on real-world projects with a team. I learned when to advocate for my own ideas and when to step back, how to adapt to different working styles, and how positivity can make me an asset to any project. Most importantly, I left the role confident in my ability to contribute to large-scale, team-based projects with both technical depth and strong interpersonal skills.
 
-</div>
+</ProjectLayout>
