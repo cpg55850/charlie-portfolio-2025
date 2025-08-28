@@ -3,7 +3,8 @@ export const works: Work[] = [
     title: 'Martin City Marketing',
     subtitle: 'Software Engineer',
     content:
-      'Designing and implementing robust web and mobile solutions with a focus on architecture, component development, and deployment. Streamlining data automation to improve business workflows and reporting.',
+      'Designing and implementing robust web and mobile solutions with a focus on architecture, component development, and deployment.',
+    //  Streamlining data automation to improve business workflows and reporting.
     backgroundColor: '#0076BB', // Default red color similar to the example
     logo: '/MCMLogo.png',
     image: '/mcm_trio.jpeg',

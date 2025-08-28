@@ -1,20 +1,36 @@
 'use client'
+import React, { createContext, useContext, useEffect, useRef } from 'react'
+
 import Lenis from 'lenis'
-import React, { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+
+const LenisContext = createContext<React.RefObject<Lenis | null> | null>(null)
 
 export default function LenisWrapper({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const lenisRef = useRef<Lenis | null>(null)
+  const pathname = usePathname()
+
+  // Initialize Lenis instance if not already created
+  if (!lenisRef.current && typeof window !== 'undefined') {
+    lenisRef.current = new Lenis({ autoRaf: true })
+  }
+
+  // Scroll to top on route change
   useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      autoRaf: true,
-    })
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true })
+    }
+  }, [pathname])
 
-    return () => lenis.destroy()
-  }, [])
+  return (
+    <LenisContext.Provider value={lenisRef}>{children}</LenisContext.Provider>
+  )
+}
 
-  return <>{children}</>
+export function useLenis() {
+  return useContext(LenisContext)
 }

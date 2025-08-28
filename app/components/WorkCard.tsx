@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import Link from 'next/link'
+import ScrollToTopLink from './ScrollToTopLink'
 
 interface UniversityProfileCardProps {
   logo?: string
@@ -31,7 +31,7 @@ export default function WorkCard({
 }: UniversityProfileCardProps) {
   return (
     <>
-      <Link href={slug}>
+      <ScrollToTopLink href={slug}>
         <div
           className={
             'flex overflow-hidden rounded-3xl shadow-lg glow-on-hover cursor-pointer'
@@ -46,12 +46,12 @@ export default function WorkCard({
         >
           {/* Left section with logo, title, subtitle, and content */}
           <div
-            className='flex flex-col p-6 text-white w-full '
+            className='flex flex-col p-6 text-white w-full justify-center'
             style={{
               backgroundColor: 'var(--bg-color)',
             }}
           >
-            <div className='flex flex-row gap-4'>
+            <div className='flex flex-row gap-4 items-center'>
               {/* Logo */}
               <div className='relative mb-6 w-24 h-24 rounded-2xl overflow-hidden bg-white/10 p-2 shadow-md'>
                 <Image
@@ -64,8 +64,8 @@ export default function WorkCard({
 
               {/* Title and subtitle */}
               <div className='space-y-1 mb-4'>
-                <h2 className='text-xl md:text-3xl font-bold leading-tight'>{title}</h2>
-                <h3 className='text-xl font-light'>{subtitle}</h3>
+                <h2 className='text-base md:text-3xl font-bold leading-tight'>{title}</h2>
+                <h3 className='text-base font-light'>{subtitle}</h3>
               </div>
             </div>
 
@@ -85,7 +85,7 @@ export default function WorkCard({
             </div>
           </div>
         </div>
-      </Link>
+      </ScrollToTopLink>
       <style jsx>{`
         .glow-on-hover {
           transition: box-shadow 0.3s ease;
