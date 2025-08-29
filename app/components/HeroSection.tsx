@@ -114,7 +114,7 @@ function HeroSection() {
           <div>
             {/* Name and Title */}
             <div className='flex flex-col items-center md:items-start mb-4'>
-              <p className='text-[1.5em] md:text-[2.5em] uppercase font-bold text-center md:text-left leading-none'>
+              <p className='text-[1.5em] md:text-[2.5em] uppercase font-bold text-center md:text-left leading-none whitespace-nowrap'>
                 <AnimatedText
                   text="Charlie"
                   className='tracking-[0.04em] block text-white'
@@ -137,7 +137,7 @@ function HeroSection() {
               style={{
                 fontSize: '0.5em', // Scales relative to the parent font-size
               }}
-              className='text-center md:text-left text-gray-400 leading-relaxed max-w-[400px] md:max-w-[28dvw] mx-auto md:mx-0'
+              className='text-center md:text-left text-gray-400 leading-relaxed max-w-[400px] mx-auto md:mx-0'
             >
               I’m a full-stack software engineer with a focus on building scalable
               web and mobile applications using TypeScript, Next.js, and React
