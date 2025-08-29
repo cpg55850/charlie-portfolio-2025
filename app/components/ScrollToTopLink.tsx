@@ -33,12 +33,20 @@ export default function ScrollToTopLink({
 
   const animatedHandleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
+
+    // Stop any ongoing scroll first
+    if (lenisRef?.current) {
+      lenisRef.current.stop()
+    }
+
     router.push(href)
+
+    // Wait a bit longer for navigation to complete and then scroll to top
     setTimeout(() => {
       if (lenisRef?.current) {
-        lenisRef.current.scrollTo(0)
+        lenisRef.current.scrollTo(0, { immediate: true })
       }
-    }, 0)
+    }, 100) // Increased delay to ensure navigation completes
   }
 
   return (
