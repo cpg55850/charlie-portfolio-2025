@@ -101,7 +101,7 @@ function HeroSection() {
             </a>
             <div className='relative flex items-center'>
               <a
-                href='https://drive.google.com/file/d/1Tpe_kj66R4OAnX1rSf_hfGAJz0p_TmdU/view?usp=sharing'
+                href='https://drive.google.com/file/d/1ZKXAZIRAES1yBg3MBKTMqClb0koVZGnO/view?usp=sharing'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='relative z-10 peer'
