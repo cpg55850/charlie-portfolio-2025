@@ -164,7 +164,7 @@ function HeroSection() {
                 }`}
                 style={{ imageOrientation: 'from-image' }}
                 priority={index === 0}
-                sizes='(max-width: 768px) 100vw, 30vw'
+                sizes='(min-width: 1700px) 26.08vw, (min-width: 780px) 402px, 288px'
               />
             ))}
           </div>
