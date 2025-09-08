@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: 'Wuphf',
     description: 'A social media platform with cute avatars',
     slug: 'wuphf',
-    image: '/wuphf_dog.png',
+    image: '/wuphf_dog.webp',
   },
   {
     title: 'Commerce Bank',
