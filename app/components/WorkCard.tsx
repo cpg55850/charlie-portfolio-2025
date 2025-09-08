@@ -54,11 +54,13 @@ export default function WorkCard({
             <div className='flex flex-row gap-4 items-center'>
               {/* Logo */}
               <div className='relative mb-6 w-24 h-24 rounded-2xl overflow-hidden bg-white/10 p-2 shadow-md'>
-                <Image
-                  src={logo ?? '/UCMLogo.jpg'}
-                  alt='University logo'
+                                <Image
+                  src={logo ?? '/UCMLogo.webp'}
+                  alt={`${title} logo`}
                   fill
                   className='w-full h-full object-contain rounded-2xl'
+                  sizes='100px'
+                  quality={85}
                 />
               </div>
 
@@ -81,6 +83,8 @@ export default function WorkCard({
                 alt={`${title} campus`}
                 fill
                 className='object-cover rounded-r-3xl'
+                sizes='(max-width: 768px) 0px, 500px'
+                quality={70}
               />
             </div>
           </div>
