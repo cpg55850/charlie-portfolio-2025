@@ -9,18 +9,29 @@ import { IoIosDocument } from 'react-icons/io'
 import GlowEffect from './GlowCard'
 import AnimatedText from './AnimatedText'
 
+// Static image imports for Next.js optimization
+import meImg from '/public/me.jpg'
+import graduationImg from '/public/graduation.webp'
+import internphotoImg from '/public/internphoto.webp'
+import mcmTrioImg from '/public/mcm_trio.jpeg'
+import mcmShowcharactersImg from '/public/mcm_showcharacters.webp'
+import dotonburiImg from '/public/dotonburi.webp'
+import gardenImg from '/public/garden.webp'
+import mountainImg from '/public/mountain.webp'
+import speechImg from '/public/speech.webp'
+
 function HeroSection() {
-  // Slideshow images
+  // Slideshow images - using static imports for Next.js optimization
   const images = [
-    '/me.jpg',
-    '/graduation.webp',
-    '/internphoto.webp',
-    '/mcm_trio.jpeg',
-    '/mcm_showcharacters.webp',
-    '/dotonburi.webp',
-    '/garden.webp',
-    '/mountain.webp',
-    '/speech.webp',
+    meImg,
+    graduationImg,
+    internphotoImg,
+    mcmTrioImg,
+    mcmShowcharactersImg,
+    dotonburiImg,
+    gardenImg,
+    mountainImg,
+    speechImg,
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -164,7 +175,8 @@ function HeroSection() {
                 }`}
                 style={{ imageOrientation: 'from-image' }}
                 priority={index === 0}
-                sizes='(min-width: 1700px) 26.08vw, (min-width: 780px) 402px, 288px'
+                sizes='(max-width: 480px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 350px, 400px'
+                quality={75}
               />
             ))}
           </div>
