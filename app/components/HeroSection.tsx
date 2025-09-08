@@ -3,24 +3,24 @@ import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import styles from './HeroSection.module.scss'
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { IoIosDocument } from "react-icons/io";
-import GlowEffect from './GlowCard';
-import AnimatedText from './AnimatedText';
+import { FaLinkedin } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
+import { IoIosDocument } from 'react-icons/io'
+import GlowEffect from './GlowCard'
+import AnimatedText from './AnimatedText'
 
 function HeroSection() {
   // Slideshow images
   const images = [
     '/me.jpg',
-    '/graduation.JPG',
-    '/internphoto.jpg',
+    '/graduation.webp',
+    '/internphoto.webp',
     '/mcm_trio.jpeg',
-    '/mcm_showcharacters.jpeg',
-    '/dotonburi.jpeg',
-    '/garden.jpeg',
-    '/mountain.jpeg',
-    '/speech.jpeg',
+    '/mcm_showcharacters.webp',
+    '/dotonburi.webp',
+    '/garden.webp',
+    '/mountain.webp',
+    '/speech.webp',
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -28,7 +28,9 @@ function HeroSection() {
   // Auto-advance slideshow every 6 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+      setCurrentImageIndex((prev) =>
+        prev === images.length - 1 ? 0 : prev + 1
+      )
     }, 6000)
 
     return () => clearInterval(interval)
@@ -45,7 +47,7 @@ function HeroSection() {
     if (myWorkSection) {
       myWorkSection.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       })
     }
   }
@@ -56,21 +58,21 @@ function HeroSection() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   }
 
   return (
     <motion.div
       className='flex flex-col justify-center items-center md:h-[100dvh] p-4'
-      initial="hidden"
-      animate="visible"
+      initial='hidden'
+      animate='visible'
       variants={containerVariants}
     >
       <motion.div
@@ -84,25 +86,25 @@ function HeroSection() {
         <div className='flex gap-4 flex-col-reverse md:flex-col'>
           <div className='flex flex-row gap-4 justify-end md:justify-start'>
             <a
-              href="https://www.linkedin.com/in/charlespgraham/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='https://www.linkedin.com/in/charlespgraham/'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <FaLinkedin className='text-3xl text-white hover:text-blue-400 transition-colors duration-300 cursor-pointer' />
             </a>
             <a
-              href="https://github.com/cpg55850"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='https://github.com/cpg55850'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <FaGithub className='text-3xl text-white hover:text-gray-400 transition-colors duration-300 cursor-pointer' />
             </a>
             <div className='relative flex items-center'>
               <a
-                href="https://drive.google.com/file/d/1Tpe_kj66R4OAnX1rSf_hfGAJz0p_TmdU/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative z-10 peer"
+                href='https://drive.google.com/file/d/1Tpe_kj66R4OAnX1rSf_hfGAJz0p_TmdU/view?usp=sharing'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='relative z-10 peer'
               >
                 <IoIosDocument className='text-3xl text-white hover:text-cyan-400 transition-colors duration-300 cursor-pointer' />
               </a>
@@ -116,12 +118,12 @@ function HeroSection() {
             <div className='flex flex-col items-center md:items-start mb-4'>
               <p className='text-[1.5em] md:text-[2.5em] uppercase font-bold text-center md:text-left leading-none whitespace-nowrap'>
                 <AnimatedText
-                  text="Charlie"
+                  text='Charlie'
                   className='tracking-[0.04em] block text-white'
                   delay={0}
                 />
                 <AnimatedText
-                  text="Graham"
+                  text='Graham'
                   className={`${styles.fancyGradient} block bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent hover:from-purple-400 hover:via-pink-300 hover:to-red-300 transition-colors duration-300 cursor-pointer`}
                   onClick={scrollToMyWork}
                   delay={0.3}
@@ -139,9 +141,9 @@ function HeroSection() {
               }}
               className='text-center md:text-left text-gray-400 leading-relaxed max-w-[400px] mx-auto md:mx-0'
             >
-              I’m a full-stack software engineer with a focus on building scalable
-              web and mobile applications using TypeScript, Next.js, and React
-              Native.
+              I’m a full-stack software engineer with a focus on building
+              scalable web and mobile applications using TypeScript, Next.js,
+              and React Native.
             </p>
           </div>
         </div>
@@ -157,11 +159,12 @@ function HeroSection() {
                 src={src}
                 fill
                 alt='Charlie Graham'
-                className={`transition-opacity duration-700 ease-in-out rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover absolute inset-0 ${index === currentImageIndex ? "opacity-100" : "opacity-0"
-                  }`}
+                className={`transition-opacity duration-700 ease-in-out rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover absolute inset-0 ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                }`}
                 style={{ imageOrientation: 'from-image' }}
                 priority={index === 0}
-                sizes="(max-width: 768px) 100vw, 30vw"
+                sizes='(max-width: 768px) 100vw, 30vw'
                 unoptimized
               />
             ))}

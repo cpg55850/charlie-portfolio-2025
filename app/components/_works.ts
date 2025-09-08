@@ -17,7 +17,7 @@ export const works: Work[] = [
       'Gained hands-on experience in Japanese business culture and language during a summer internship in Osaka, enhancing my professional communication skills.',
     backgroundColor: '#006A30', // Default red color similar to the example
     logo: '/SMBCLogo.png',
-    image: '/internphoto.jpg',
+    image: '/internphoto.webp',
     slug: 'smbc',
   },
   {
