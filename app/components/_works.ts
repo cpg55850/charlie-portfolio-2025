@@ -26,7 +26,7 @@ export const works: Work[] = [
     content:
       'Supported students in mastering C programming, algorithms, and Unix systems, helping them improve academically through personalized tutoring.',
     backgroundColor: '#d32f2f', // Default red color similar to the example
-    logo: '/UCMLogo.jpg',
+    logo: '/UCMLogo.webp',
     image: '/UCMLibrary.webp',
     slug: 'ucm',
   },
