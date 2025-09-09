@@ -12,7 +12,7 @@ import AnimatedText from './AnimatedText'
 // Static image imports for Next.js optimization
 import meImg from '/public/me.jpg'
 import graduationImg from '/public/graduation.webp'
-import internphotoImg from '/public/internphoto.webp'
+import internphotoImg from '/public/internphoto_crop.jpg'
 import mcmTrioImg from '/public/mcm_trio.jpeg'
 import mcmShowcharactersImg from '/public/mcm_showcharacters.webp'
 import dotonburiImg from '/public/dotonburi.webp'
