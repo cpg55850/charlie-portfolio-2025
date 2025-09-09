@@ -164,15 +164,10 @@ function HeroSection() {
             className={`relative aspect-[3/4] overflow-hidden rounded-lg cursor-pointer ${styles['slideshow-container']}`}
             onClick={goToNextImage}
           >
-            {/* Only load in the current image, prev image and next image into the dom at 1 time */}
-            {[
-              (currentImageIndex - 1) % images.length,
-              currentImageIndex,
-              (currentImageIndex + 1) % images.length,
-            ].map((index) => (
+            {images.map((src, index) => (
               <Image
                 key={index}
-                src={images[index]}
+                src={src}
                 fill
                 alt='Charlie Graham'
                 className={`transition-opacity duration-700 ease-in-out rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover absolute inset-0 ${
