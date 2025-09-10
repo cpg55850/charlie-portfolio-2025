@@ -75,7 +75,7 @@ const FooterSection = () => {
             </li>
             <li className='text-xl'>
               <a
-                href="https://drive.google.com/file/d/1Tpe_kj66R4OAnX1rSf_hfGAJz0p_TmdU/view?usp=sharing"
+                href="https://drive.google.com/file/d/1MJXRrZHm3Ka5fii-WSzcKziVpupEnge3/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className='hover:text-blue-400 transition-colors duration-300'
