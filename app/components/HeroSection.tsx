@@ -152,9 +152,21 @@ function HeroSection() {
               }}
               className='text-center md:text-left text-gray-400 leading-relaxed max-w-[400px] mx-auto md:mx-0'
             >
-              I’m a full-stack software engineer with a focus on building
+              Software Engineer
+              {/* I’m a full-stack software engineer with a focus on building
               scalable web and mobile applications using TypeScript, Next.js,
-              and React Native.
+              and React Native. */}
+            </p>
+            <p
+              style={{
+                fontSize: '0.5em', // Scales relative to the parent font-size
+              }}
+              className='text-center md:text-left text-gray-400 leading-relaxed max-w-[400px] mx-auto md:mx-0'
+            >
+              Independence, MO
+              {/* I’m a full-stack software engineer with a focus on building
+              scalable web and mobile applications using TypeScript, Next.js,
+              and React Native. */}
             </p>
           </div>
         </div>
@@ -170,9 +182,8 @@ function HeroSection() {
                 src={src}
                 fill
                 alt='Charlie Graham'
-                className={`transition-opacity duration-700 ease-in-out rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover absolute inset-0 ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`transition-opacity duration-700 ease-in-out rounded-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-400/70 object-cover absolute inset-0 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
                 style={{ imageOrientation: 'from-image' }}
                 priority={index === 0}
                 sizes='(max-width: 480px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 350px, 400px'

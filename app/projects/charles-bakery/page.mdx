@@ -2,6 +2,7 @@ import ProjectHeader from '../../components/ProjectHeader'
 import ProjectLayout from '../../components/ProjectLayout'
 import Link from 'next/link'
 import Image from 'next/image'
+import ProjectExternalLink from '../../components/ProjectExternalLink';
 
 <ProjectLayout 
   breadcrumbItems={[
@@ -10,9 +11,9 @@ import Image from 'next/image'
   ]}
 >
 
-<Image src="/charles_bakery_headerimage.webp" alt="Charles' Bakery Header" width={1920} height={1080} className="mx-auto mb-8 rounded-lg shadow-lg" />
+<Image src="/charles_bakery_headerimage.webp" alt="Charles' Bakery Header" width={1920} height={1080} className="mx-auto mb-4 rounded-lg shadow-lg" />
 
-<Link href="https://upbeat-mahavira-066207.netlify.app/" className="text-blue-500 hover:underline">View Live Site</Link>
+<ProjectExternalLink href="https://upbeat-mahavira-066207.netlify.app/" className="mb-6" />
 
 <ProjectHeader
   title="Charles' Bakery"
