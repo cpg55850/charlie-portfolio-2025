@@ -186,7 +186,7 @@ function HeroSection() {
                   }`}
                 style={{ imageOrientation: 'from-image' }}
                 priority={index === 0}
-                sizes='(max-width: 480px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 350px, 400px'
+                sizes='(max-width: 480px) 380px, (max-width: 768px) 520px, (max-width: 1024px) 750px, 600px'
                 quality={75}
               />
             ))}
