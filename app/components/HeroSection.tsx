@@ -128,6 +128,7 @@ function HeroSection() {
             {/* Name and Title */}
             <div className='flex flex-col items-center md:items-start mb-4'>
               <p className='text-[1.5em] md:text-[2.5em] uppercase font-bold text-center md:text-left leading-none whitespace-nowrap'>
+                <h1 className='hidden'>Charlie Graham</h1>
                 <AnimatedText
                   text='Charlie'
                   className='tracking-[0.04em] block text-white'
