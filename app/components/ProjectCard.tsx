@@ -20,7 +20,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     />
                 </div>
                 <div className='flex-shrink p-4 text-white'>
-                    <h1 className='font-bold md:text-2xl'>{project.title}</h1>
+                    <h2 className='font-bold md:text-2xl'>{project.title}</h2>
                     <p>{project.description}</p>
                 </div>
             </ScrollToTopLink>
