@@ -1,0 +1,62 @@
+import ProjectHeader from '../../components/ProjectHeader'
+import ProjectLayout from '../../components/ProjectLayout'
+import Link from 'next/link'
+import Image from 'next/image'
+import { FaExternalLinkAlt } from "react-icons/fa";
+import ProjectExternalLink from '../../components/ProjectExternalLink';
+
+<ProjectLayout 
+  breadcrumbItems={[
+    { label: 'Projects', href: '/#projects' },
+    { label: 'Wanna Sell Your Car' }
+  ]}
+>
+
+<Image src="/wannasell2.png" alt="Wanna Sell Your Car Header" width={1920} height={1080} className="mx-auto mb-4 rounded-lg shadow-lg" />
+
+<ProjectExternalLink href="https://wannasellyourcar.com/" className="mb-6" />
+
+<ProjectHeader
+  title="Wanna Sell Your Car"
+  subtitle="A professional car buying service website built with Next.js, featuring a streamlined user experience that has earned 191 Google Business reviews averaging 4.4/5 stars."
+  image="/wanna_sell_your_car_logo.png"
+/>
+
+# Project Overview
+Built and optimized the "Wanna Sell Your Car" website, which has achieved remarkable customer satisfaction with 191 Google Business reviews averaging 4.4/5 stars. This success has contributed significantly to strong customer acquisition and retention for the business.
+
+# Technologies Used
+The website was built using modern web technologies:
+- **Next.js** for the React-based framework
+- **TypeScript** for type-safe development
+- **Responsive Design** for optimal mobile and desktop experience
+- **SEO Optimization** to improve search visibility
+- **Performance Optimization** for fast loading times
+
+# Design Collaboration
+This project was developed in close collaboration with a talented graphic designer, ensuring that the technical implementation perfectly matched the visual design vision. This collaborative approach resulted in a polished, professional website that effectively represents the brand and converts visitors into customers.
+
+# Key Features
+The website includes several features designed to streamline the car selling process:
+- Clean, professional design that builds trust with potential sellers
+- Intuitive user interface for easy navigation
+- Optimized contact forms and inquiry systems
+- Mobile-responsive design for users on all devices
+- Fast loading times to reduce bounce rates
+
+<Image src="/howitworks.png" alt="How It Works" width={1920} height={1080} className="mx-auto mb-8 rounded-lg shadow-lg" />
+
+# Business Impact
+The website&apos;s success is reflected in its impressive customer review metrics:
+- **191 Google Business Reviews** demonstrate strong customer engagement
+- **4.4/5 Star Average** indicates high customer satisfaction
+- Strong contribution to **customer acquisition and retention**
+- Professional online presence that builds credibility and trust
+
+# Technical Implementation
+Built with Next.js to ensure optimal performance and SEO capabilities, the website leverages modern web development practices including server-side rendering, optimized images, and efficient code splitting. The result is a fast, reliable platform that provides an excellent user experience across all devices.
+
+# Lessons Learned
+This project reinforced the importance of collaboration between design and development teams. Working closely with a graphic designer taught me how to effectively translate visual concepts into functional, performant web applications while maintaining design integrity. The project&apos;s measurable success in customer satisfaction and business metrics validates the importance of user-focused development and attention to detail.
+
+</ProjectLayout>

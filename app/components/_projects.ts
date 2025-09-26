@@ -12,6 +12,12 @@ export const projects: Project[] = [
     image: '/mcm_logo.webp',
   },
   {
+    title: 'Wanna Sell Your Car',
+    description: 'A platform to help users value and sell their cars',
+    slug: 'wanna-sell-your-car',
+    image: '/wannasell-logo.jpg',
+  },
+  {
     title: 'Wuphf',
     description: 'A social media platform with cute avatars',
     slug: 'wuphf',
