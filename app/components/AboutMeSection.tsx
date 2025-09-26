@@ -47,7 +47,7 @@ export default function AboutMeSection() {
                             variants={itemVariants}
                         >
                             <p>
-                                I&apos;m Charlie Graham, a full-stack software engineer employed at Martin City Marketing and current Master&apos;s student in Computer Science at Georgia Tech. I specialize in building scalable web and mobile applications with TypeScript, Next.js, and React Native, with experience spanning software architecture, component development, and deployment.
+                                I&apos;m Charlie Graham, a full-stack software engineer and current Master&apos;s student in Computer Science at Georgia Tech. I specialize in building scalable web and mobile applications with TypeScript, Next.js, and React Native, with experience spanning software architecture, component development, and deployment.
                             </p>
                             <p>
                                 My background includes professional work as a software engineer at Martin City Marketing, an internship in Osaka with SMBC Nikko Securities, and tutoring in computer science at the University of Central Missouri. Beyond the technical side, I enjoy bridging creativity with functionality—whether it&apos;s designing robust systems, crafting user-friendly interfaces, or exploring new technologies to solve real problems.
