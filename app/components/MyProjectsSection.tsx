@@ -6,7 +6,7 @@ import { projects } from './_projects'
 import ProjectCard from './ProjectCard'
 
 const MyProjectsSection = () => {
-    const [numVisibleProjects, setNumVisibleProjects] = useState(6)
+    const numVisibleProjects = 6
     const [visibleProjects, setVisibleProjects] = useState(numVisibleProjects)
 
     const loadMoreProjects = () => {
