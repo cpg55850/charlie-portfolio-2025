@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import LenisWrapper from './components/LenisWrapper'
+// import LenisWrapper from './components/LenisWrapper'
 import './globals.css'
 import Background from './components/Background'
+import LenisWrapper from './components/LenisWrapper'
 
 const inter = Inter({
   variable: '--font-inter',

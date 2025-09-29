@@ -22,6 +22,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 <div className='flex-shrink p-4 text-white'>
                     <h2 className='font-bold md:text-2xl'>{project.title}</h2>
                     <p>{project.description}</p>
+                    <p className='text-sm text-slate-400 mt-1'>{project.technologies.slice(0, 3).join(', ')}...</p>
                 </div>
             </ScrollToTopLink>
         </GlowEffect>

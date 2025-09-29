@@ -6,7 +6,8 @@ import { projects } from './_projects'
 import ProjectCard from './ProjectCard'
 
 const MyProjectsSection = () => {
-    const [visibleProjects, setVisibleProjects] = useState(4)
+    const [numVisibleProjects, setNumVisibleProjects] = useState(6)
+    const [visibleProjects, setVisibleProjects] = useState(numVisibleProjects)
 
     const loadMoreProjects = () => {
         console.log('Load more clicked! Current visible:', visibleProjects, 'Total projects:', projects.length)
@@ -35,7 +36,7 @@ const MyProjectsSection = () => {
             </motion.div>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-screen-xl'>
                 {/* Initial 4 projects with individual animations */}
-                {projects.slice(0, Math.min(4, visibleProjects)).map((project, index) => (
+                {projects.slice(0, Math.min(numVisibleProjects, visibleProjects)).map((project, index) => (
                     <motion.div
                         key={project.slug}
                         initial={{ opacity: 0, y: 30 }}
@@ -54,7 +55,7 @@ const MyProjectsSection = () => {
 
                 {/* Additional projects with individual animations */}
                 <AnimatePresence>
-                    {projects.slice(4, visibleProjects).map((project, index) => (
+                    {projects.slice(numVisibleProjects, visibleProjects).map((project, index) => (
                         <motion.div
                             key={project.slug}
                             initial={{ opacity: 0, y: 30 }}

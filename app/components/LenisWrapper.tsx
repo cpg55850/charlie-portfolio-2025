@@ -35,16 +35,19 @@ export default function LenisWrapper({
 
   // Handle route changes - scroll to top without stopping Lenis
   useEffect(() => {
-    // Simple scroll to top on route change
-    window.scrollTo(0, 0)
+    // Only scroll to top if there's no hash in the URL
+    if (!window.location.hash) {
+      // Simple scroll to top on route change
+      window.scrollTo(0, 0)
 
-    // Also tell Lenis about the position change
-    if (lenisRef.current) {
-      setTimeout(() => {
-        if (lenisRef.current) {
-          lenisRef.current.scrollTo(0, { immediate: true })
-        }
-      }, 0)
+      // Also tell Lenis about the position change
+      if (lenisRef.current) {
+        setTimeout(() => {
+          if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, { immediate: true })
+          }
+        }, 0)
+      }
     }
   }, [pathname])
 

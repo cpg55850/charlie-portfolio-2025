@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaExternalLinkAlt } from "react-icons/fa";
 import ProjectExternalLink from '../../components/ProjectExternalLink';
+import TechStack from '../../components/TechStack';
+import { projects } from '../../components/_projects';
 
 <ProjectLayout 
   breadcrumbItems={[
@@ -21,6 +23,9 @@ import ProjectExternalLink from '../../components/ProjectExternalLink';
   subtitle="Pizza You is a LAMP stack (Linux, Apache, MySQL, PHP) project, which allows users to order pizza. (Delicious)."
   image="/pizza_you.png"
 />
+
+<TechStack
+  technologies={projects.find(project => project.slug === 'pizza-you')?.technologies} />
 
 # Technologies Used
 Pizza You was built using a classic LAMP stack:

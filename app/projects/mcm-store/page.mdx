@@ -2,6 +2,8 @@ import ProjectHeader from '../../components/ProjectHeader'
 import ProjectLayout from '../../components/ProjectLayout'
 import Image from 'next/image'
 import ProjectExternalLink from '../../components/ProjectExternalLink';
+import TechStack from '../../components/TechStack';
+import { projects } from '../../components/_projects';
 
 <ProjectLayout 
   breadcrumbItems={[
@@ -21,7 +23,8 @@ import ProjectExternalLink from '../../components/ProjectExternalLink';
   forText="Created for Martin City Marketing"
 />
 
-<span className='text-gray-400 text-sm'>Tech Stack: React, Next.js, Tailwind CSS, Node.js, Express, PostgreSQL, Prisma, Vercel</span>
+<TechStack
+  technologies={projects.find(project => project.slug === 'mcm-store')?.technologies} />
 
 ## Purpose and Goal
 The primary goal was to replace WooCommerce with a faster, more maintainable, and integrated platform. By using Shopify, we could deploy client stores faster, reduce technical overhead, and connect directly with our internal systems. The target audience includes Cable Dahmer employees and locations needing branded products such as uniforms and promotional items.

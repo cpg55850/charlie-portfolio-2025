@@ -2,17 +2,18 @@
 import React from 'react'
 import CGLogo from '/public/CGLogo.svg'
 import Image from 'next/image'
-import { useLenis } from './LenisWrapper'
 import { motion } from 'framer-motion'
 import GlowEffect from './GlowCard'
 
 const FooterSection = () => {
-  const lenisRef = useLenis()
 
   const handleSmoothScroll = (targetId: string) => {
     const element = document.getElementById(targetId)
-    if (element && lenisRef?.current) {
-      lenisRef.current.scrollTo(element)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
     }
   }
 
@@ -45,18 +46,31 @@ const FooterSection = () => {
         variants={itemVariants}
       >
         <motion.div variants={itemVariants}>
-          <GlowEffect className='rounded-full aspect-square w-24 h-24'>
-            <Image
-              src={CGLogo}
-              alt='Charlie Graham Logo'
-              className='w-24 h-24 mx-auto mb-4'
-            />
-          </GlowEffect>
+          <button
+            onClick={() => handleSmoothScroll('top')}
+            className='hover:scale-105 transition-transform duration-300'
+          >
+            <GlowEffect className='rounded-full aspect-square w-24 h-24'>
+              <Image
+                src={CGLogo}
+                alt='Charlie Graham Logo'
+                className='w-24 h-24 mx-auto mb-4'
+              />
+            </GlowEffect>
+          </button>
         </motion.div>
 
         <motion.div variants={itemVariants}>
           {/* <h2 className='text-sm mb-2'>explore</h2> */}
           <ul>
+            <li className='text-xl'>
+              <button
+                onClick={() => handleSmoothScroll('about-me')}
+                className='hover:text-blue-400 transition-colors duration-300 hover:cursor-pointer'
+              >
+                about me
+              </button>
+            </li>
             <li className='text-xl'>
               <button
                 onClick={() => handleSmoothScroll('my-work')}

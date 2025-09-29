@@ -2,6 +2,8 @@ import ProjectHeader from '../../components/ProjectHeader'
 import ProjectLayout from '../../components/ProjectLayout'
 import Image from 'next/image'
 import ProjectExternalLink from '../../components/ProjectExternalLink';
+import TechStack from '../../components/TechStack';
+import { projects } from '../../components/_projects';
 
 <ProjectLayout 
   breadcrumbItems={[
@@ -19,6 +21,9 @@ import ProjectExternalLink from '../../components/ProjectExternalLink';
   subtitle="The Martin City Marketing website was built to better represent the brand’s wide range of services, clearly communicate what we do, and impress potential clients and employees. This was a complete redesign, created with a focus on modern web technologies, strong UI/UX collaboration, and long-term content flexibility."
   image="/wuphf_dog.png"
 />
+
+<TechStack
+  technologies={projects.find(project => project.slug === 'martin-city-marketing')?.technologies} />
 
 ## Technologies Used
 The frontend was developed using **Next.js**, **TypeScript**, and **Tailwind CSS** for a responsive, modern, and highly performant interface. The backend content management system (CMS) was built with **Strapi**, hosted on **DigitalOcean**. The frontend is deployed on **Vercel** for global performance and scalability.  

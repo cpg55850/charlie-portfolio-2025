@@ -33,7 +33,7 @@ export default function AboutMeSection() {
             viewport={{ once: true, amount: 0.3 }}
         >
             <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
                     {/* Text Content */}
                     <motion.div className="space-y-6" variants={itemVariants}>
                         <motion.h2

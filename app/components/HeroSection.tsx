@@ -54,7 +54,7 @@ function HeroSection() {
 
   // Handle smooth scroll to My Work section
   const scrollToMyWork = () => {
-    const myWorkSection = document.getElementById('my-work')
+    const myWorkSection = document.getElementById('about-me')
     if (myWorkSection) {
       myWorkSection.scrollIntoView({
         behavior: 'smooth',

@@ -3,6 +3,7 @@ type Project = {
   description?: string
   slug: string
   image: string
+  technologies: string[]
 }
 
 type Work = {

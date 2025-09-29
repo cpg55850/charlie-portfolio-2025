@@ -14,12 +14,22 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <AboutMeSection />
+      <div id="top">
+        <HeroSection />
+      </div>
+      <div id="about-me">
+        <AboutMeSection />
+      </div>
       <div className='w-full flex flex-col md:gap-8 items-center justify-center px-4'>
-        <MyWorkSection />
-        <MyProjectsSection />
-        <GetInTouchSection />
+        <div id="my-work">
+          <MyWorkSection />
+        </div>
+        <div id="projects">
+          <MyProjectsSection />
+        </div>
+        <div id="contact">
+          <GetInTouchSection />
+        </div>
         <FooterSection />
       </div>
     </>
