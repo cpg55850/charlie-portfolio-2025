@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
-import ScrollToTopLink from './ScrollToTopLink'
+// import ScrollToTopLink from './ScrollToTopLink'
+import Link from 'next/link'
 
 interface UniversityProfileCardProps {
   logo?: string
@@ -31,7 +32,7 @@ export default function WorkCard({
 }: UniversityProfileCardProps) {
   return (
     <>
-      <ScrollToTopLink href={slug}>
+      <Link href={slug}>
         <div
           className={
             'flex overflow-hidden rounded-3xl shadow-lg glow-on-hover cursor-pointer'
@@ -54,7 +55,7 @@ export default function WorkCard({
             <div className='flex flex-row gap-4 items-center'>
               {/* Logo */}
               <div className='relative mb-6 w-24 h-24 rounded-2xl overflow-hidden bg-white/10 p-2 shadow-md'>
-                                <Image
+                <Image
                   src={logo ?? '/UCMLogo.webp'}
                   alt={`${title} logo`}
                   fill
@@ -89,7 +90,7 @@ export default function WorkCard({
             </div>
           </div>
         </div>
-      </ScrollToTopLink>
+      </Link>
       <style jsx>{`
         .glow-on-hover {
           transition: box-shadow 0.3s ease;

@@ -33,10 +33,14 @@ export default function LenisWrapper({
     }
   }, [])
 
-  // Handle route changes - scroll to top without stopping Lenis
+  // Handle route changes - scroll to top for any page except home page
   useEffect(() => {
-    // Only scroll to top if there's no hash in the URL
-    if (!window.location.hash) {
+    // Only scroll to top if:
+    // 1. There's no hash in the URL, AND
+    // 2. We're NOT on the home page (any route other than "/")
+    const isNotHomePage = pathname !== '/'
+
+    if (!window.location.hash && isNotHomePage) {
       // Simple scroll to top on route change
       window.scrollTo(0, 0)
 
