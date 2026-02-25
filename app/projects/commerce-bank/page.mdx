@@ -1,10 +1,10 @@
-import ProjectHeader from '../../components/ProjectHeader'
-import ProjectLayout from '../../components/ProjectLayout'
-import Image from 'next/image'
-import Link from 'next/link'
-import ProjectExternalLink from '../../components/ProjectExternalLink';
-import TechStack from '../../components/TechStack';
-import { projects } from '../../components/_projects';
+import ProjectHeader from "../../components/ProjectHeader";
+import ProjectLayout from "../../components/ProjectLayout";
+import Image from "next/image";
+import Link from "next/link";
+import ProjectExternalLink from "../../components/ProjectExternalLink";
+import TechStack from "../../components/TechStack";
+import { projects } from "../../components/_projects";
 
 <ProjectLayout 
   breadcrumbItems={[
@@ -13,11 +13,18 @@ import { projects } from '../../components/_projects';
   ]}
 >
 
+<Image
+  src="/commerce_bank_headerimage.webp"
+  alt="MCM Store Header"
+  width={1920}
+  height={1080}
+  className="mx-auto mb-4 rounded-lg shadow-lg"
+/>
 
-
-<Image src="/commerce_bank_headerimage.webp" alt="MCM Store Header" width={1920} height={1080} className="mx-auto mb-4 rounded-lg shadow-lg" />
-
-<ProjectExternalLink href="https://commerce.charlesgraham.co/" className="mb-6" />
+<ProjectExternalLink
+  href="https://commerce.charliegraham.dev/"
+  className="mb-6"
+/>
 
 <ProjectHeader
   title="Commerce Bank"
@@ -26,20 +33,27 @@ import { projects } from '../../components/_projects';
 />
 
 <TechStack
-  technologies={projects.find(project => project.slug === 'commerce-bank')?.technologies} />
+  technologies={
+    projects.find((project) => project.slug === "commerce-bank")?.technologies
+  }
+/>
 
 ## Purpose and Goal
+
 The goal was to create a reliable, easy-to-use system for employees to reserve cubicles for specific time slots. This project gave me the opportunity to work on both sides of the stack — learning an entirely new backend framework (Spring Boot) while also ensuring the UI was clean, responsive, and intuitive.
 
 ## Technologies Used
+
 The backend was built with Spring Boot (Java) and MySQL, deployed to Heroku. For authentication, we implemented JWT-based login and registration. The frontend was developed with React and styled using Material UI to speed up interface creation, deployed to Netlify. Communication between the frontend and backend was handled via a REST API.
 
 ## Technical Hurdles (and How They Were Solved)
+
 One of the steepest learning curves was picking up Spring Boot for the first time. Even with prior Java experience, I had to quickly adapt to its annotations-based structure (e.g., @Controller, @Service, @Repository) and learn best practices for structuring backend code.
 I also ran into CORS errors when connecting the React frontend to the Spring Boot backend. This required digging into HTTP headers and Spring Boot configuration to allow secure cross-origin requests.
 Another significant challenge was implementing a database query to find available cubicles in a specific time range. My initial approach was to fetch large amounts of data and filter it on the frontend, but after consulting my professor, I learned how to write optimized SQL queries directly in MySQL. This not only simplified the logic but also drastically improved performance.
 
 ## Lessons Learned
+
 This project taught me how to bridge the gap between frontend and backend development, and how to think more efficiently about database queries. It reinforced the value of asking for help when stuck — sometimes a 10-minute conversation can save hours of frustration. From a process standpoint, I gained firsthand experience with Scrum and sprints, which helped structure the work and keep the project on track. Most importantly, I left with confidence in integrating unfamiliar technologies and solving full-stack communication issues.
 
 </ProjectLayout>
