@@ -1,11 +1,11 @@
-import ProjectHeader from '../../components/ProjectHeader'
-import ProjectLayout from '../../components/ProjectLayout'
-import Link from 'next/link'
-import Image from 'next/image'
+import ProjectHeader from "../../components/ProjectHeader";
+import ProjectLayout from "../../components/ProjectLayout";
+import Link from "next/link";
+import Image from "next/image";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import ProjectExternalLink from '../../components/ProjectExternalLink';
-import TechStack from '../../components/TechStack';
-import { projects } from '../../components/_projects';
+import ProjectExternalLink from "../../components/ProjectExternalLink";
+import TechStack from "../../components/TechStack";
+import { projects } from "../../components/_projects";
 
 <ProjectLayout 
   breadcrumbItems={[
@@ -14,9 +14,18 @@ import { projects } from '../../components/_projects';
   ]}
 >
 
-<Image src="/pizza_you_headerimage.webp" alt="Pizza You Header" width={1920} height={1080} className="mx-auto mb-4 rounded-lg shadow-lg" />
+<Image
+  src="/pizza_you_headerimage.webp"
+  alt="Pizza You Header"
+  width={1920}
+  height={1080}
+  className="mx-auto mb-4 rounded-lg shadow-lg"
+/>
 
-<ProjectExternalLink href="https://pizzayou.charlesgraham.co/" className="mb-6" />
+<ProjectExternalLink
+  href="https://pizzayou.charliegraham.dev/"
+  className="mb-6"
+/>
 
 <ProjectHeader
   title="Pizza You"
@@ -25,10 +34,15 @@ import { projects } from '../../components/_projects';
 />
 
 <TechStack
-  technologies={projects.find(project => project.slug === 'pizza-you')?.technologies} />
+  technologies={
+    projects.find((project) => project.slug === "pizza-you")?.technologies
+  }
+/>
 
 # Technologies Used
+
 Pizza You was built using a classic LAMP stack:
+
 - **PHP** for backend programming
 - **MySQL** for the database
 - **Apache** as the web server
@@ -37,11 +51,13 @@ Pizza You was built using a classic LAMP stack:
 This was my first real exposure to PHP and SQL, and it gave me a strong foundation in how backend systems process and handle requests. While this isn't the stack I would use for production development today, the experience was valuable for understanding how web applications were built in the early days of the internet.
 
 # Purpose and Goal
+
 The main purpose of Pizza You was to learn how to connect a backend to a database and create a functioning, dynamic website using PHP and SQL. This was a project for my backend web development class, and the assignment emphasized understanding how things work under the hood before moving on to more modern frameworks.
 
 As part of this project, I also built a custom login system from scratch, including user authentication and session management. This gave me practical experience in security basics and user management, providing a solid foundation that would inform my approach to authentication in future projects.
 
 # Technical Hurdles (and How They Were Solved)
+
 One of the main challenges I faced was working directly with raw SQL queries inside PHP. It required careful attention to detail to ensure queries executed correctly, and it gave me a better understanding of how ORMs like Prisma simplify this process in modern development.
 
 Another significant hurdle was setting up the LAMP stack itself. I had to learn how to configure Apache, PHP, and MySQL to work together seamlessly. Debugging connection errors and permissions issues taught me patience and sharpened my troubleshooting skills - experience that proved invaluable in later projects.
@@ -49,6 +65,7 @@ Another significant hurdle was setting up the LAMP stack itself. I had to learn 
 Working with PHP's syntax and understanding how to properly sanitize user inputs to prevent SQL injection attacks was also a learning curve that made me more security-conscious as a developer.
 
 # Lessons Learned
+
 From this project, I gained an appreciation for how far web development has come. Writing raw SQL queries and building login systems without external libraries gave me a strong foundation, but also showed me why frameworks and modern tools like Next.js, Prisma, and NextAuth are so valuable today.
 
 While I wouldn't choose PHP and LAMP for new projects, the experience helped me understand the fundamentals of web infrastructure and backend logic, which continues to influence how I build applications today. The project taught me to appreciate the abstractions that modern frameworks provide while understanding what's happening underneath the hood.
